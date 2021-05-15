@@ -1,9 +1,10 @@
-html,
-body {
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+html, body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
 a {
@@ -14,3 +15,105 @@ a {
 * {
   box-sizing: border-box;
 }
+
+@media only screen and (max-width: 768px) {
+  .fade-gradient-orange {
+    background-image: linear-gradient(to bottom, #ff7200, transparent)
+  }
+  .fade-gradient-red {
+    background-image: linear-gradient(to bottom, #EF4444, transparent)
+  }
+  .fade-gradient-green {
+    background-image: linear-gradient(to bottom, #10B981, transparent)
+  }
+  .fade-gradient-blue {
+    background-image: linear-gradient(to bottom, #3B82F6, transparent)
+  }
+  .fade-gradient-indigo {
+    background-image: linear-gradient(to bottom, #6366F1, transparent)
+  }
+  .fade-gradient-purple {
+    background-image: linear-gradient(to bottom, #8B5CF6, transparent)
+  }
+  .fade-gradient-pink {
+    background-image: linear-gradient(to bottom, #EC4899, transparent)
+  }
+  .fade-gradient-orange-r {
+    background-image: linear-gradient(to bottom, #ff7200, transparent)
+  }
+  .fade-gradient-red-r {
+    background-image: linear-gradient(to bottom, #EF4444, transparent)
+  }
+  .fade-gradient-green-r {
+    background-image: linear-gradient(to bottom, #10B981, transparent)
+  }
+  .fade-gradient-blue-r {
+    background-image: linear-gradient(to bottom, #3B82F6, transparent)
+  }
+  .fade-gradient-indigo-r {
+    background-image: linear-gradient(to bottom, #6366F1, transparent)
+  }
+  .fade-gradient-purple-r {
+    background-image: linear-gradient(to bottom, #8B5CF6, transparent)
+  }
+  .fade-gradient-pink-r {
+    background-image: linear-gradient(to bottom, #EC4899, transparent)
+  }
+}
+
+.fade-gradient-orange {
+  background-image: linear-gradient(to right, #ff7200, transparent)
+}
+
+.fade-gradient-red {
+  background-image: linear-gradient(to right, #EF4444, transparent)
+}
+
+.fade-gradient-green {
+  background-image: linear-gradient(to right, #10B981, transparent)
+}
+
+.fade-gradient-blue {
+  background-image: linear-gradient(to right, #3B82F6, transparent)
+}
+
+.fade-gradient-indigo {
+  background-image: linear-gradient(to right, #6366F1, transparent)
+}
+
+.fade-gradient-purple {
+  background-image: linear-gradient(to right, #8B5CF6, transparent)
+}
+
+.fade-gradient-pink {
+  background-image: linear-gradient(to right, #EC4899, transparent)
+}
+
+.fade-gradient-orange-r {
+  background-image: linear-gradient(to left, #ff7200, transparent)
+}
+
+.fade-gradient-red-r {
+  background-image: linear-gradient(to left, #EF4444, transparent)
+}
+
+.fade-gradient-green-r {
+  background-image: linear-gradient(to left, #10B981, transparent)
+}
+
+.fade-gradient-blue-r {
+  background-image: linear-gradient(to left, #3B82F6, transparent)
+}
+
+.fade-gradient-indigo-r {
+  background-image: linear-gradient(to left, #6366F1, transparent)
+}
+
+.fade-gradient-purple-r {
+  background-image: linear-gradient(to left, #8B5CF6, transparent)
+}
+
+.fade-gradient-pink-r {
+  background-image: linear-gradient(to left, #EC4899, transparent)
+}
+

@@ -58,19 +58,9 @@ export default function ResearchPage(props) {
           allowFullScreen
         />
       </div>
-      <div className={superClass} />
+      {/* Tailwind purges the dynamic classnames, writing them in this div makes it keep them */}
+      <div className='hidden bg-green-400 bg-green-500 bg-green-700 bg-orange-400 bg-orange-500 bg-orange-700 bg-blue-400 bg-blue-500 bg-blue-700 bg-red-400 bg-red-500 bg-red-700 bg-indigo-400 bg-indigo-500 bg-indigo-700 bg-purple-400 bg-purple-500 bg-purple-700 bg-pink-400 bg-pink-500 bg-pink-700 flex-row-reverse flex-col-reverse translate-x-0.25 translate-x-4 translate-x-8 translate-x-12 translate-x-16 translate-x-20 translate-x-24 translate-x-28 translate-x-32 translate-x-40 translate-x-44 translate-x-48 translate-x-52 translate-x-56 translate-x-60 translate-x-64 translate-x-72 translate-x-80 translate-x-96 -translate-x-0.25 -translate-x-4 -translate-x-8 -translate-x-12 -translate-x-16 -translate-x-20 -translate-x-24 -translate-x-28 -translate-x-32 -translate-x-40 -translate-x-44 -translate-x-48 -translate-x-52 -translate-x-56 -translate-x-60 -translate-x-64 -translate-x-72 -translate-x-80 -translate-x-96' />
       <Link href='/'><a><p className='text-blue-700 text-center mt-12 mb-32'><u>Back to Home</u></p></a></Link>
     </>
   )
 }
-
-// Tailwind purges the dynamic classnames, writing them here makes it keep them
-const superClass = ('hidden bg-green-400 bg-green-500 bg-green-700 bg-orange-400 bg-orange-500 bg-orange-700 bg-blue-400 bg-blue-500 ' + 
-'bg-blue-700 bg-red-400 bg-red-500 bg-red-700 bg-indigo-400 bg-indigo-500 bg-indigo-700 bg-purple-400 bg-purple-500 bg-purple-700 ' + 
-'bg-pink-400 bg-pink-500 bg-pink-700 flex-row-reverse flex-col-reverse translate-x-0.25 translate-x-4 translate-x-8 translate-x-12 ' +
-'translate-x-16 translate-x-20 translate-x-24 translate-x-28 translate-x-32 translate-x-40 translate-x-44 translate-x-48 ' + 
-'translate-x-52 translate-x-56 translate-x-60 translate-x-64 translate-x-72 translate-x-80 translate-x-96 -translate-x-0.25 ' + 
-'-translate-x-4 -translate-x-8 -translate-x-12 -translate-x-16 -translate-x-20 -translate-x-24 -translate-x-28 -translate-x-32 ' + 
-'-translate-x-40 -translate-x-44 -translate-x-48 -translate-x-52 -translate-x-56 -translate-x-60 -translate-x-64 -translate-x-72 ' + 
-' -translate-x-80 -translate-x-96'
- );

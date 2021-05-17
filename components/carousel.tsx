@@ -78,3 +78,46 @@ function getTailwindSize(n: number) {
   const values = [1, 16, 32, 48, 64, 80, 96, 112, 128, 144, 160, 176, 192, 208, 224, 240, 256, 256, 288, 288, 320, 320, 320, 320, 384];
   return (values[(Math.floor(n/16))] / 4 || 96).toString();
 }
+
+/*
+  PurgeCSS:
+  Tailwind purges the dynamic classnames, writing them here makes it keep them
+  * translate-x-0.25
+  * translate-x-4
+  * translate-x-8
+  * translate-x-12
+  * translate-x-16
+  * translate-x-20
+  * translate-x-24
+  * translate-x-28
+  * translate-x-32
+  * translate-x-40
+  * translate-x-44
+  * translate-x-48
+  * translate-x-52
+  * translate-x-56
+  * translate-x-60
+  * translate-x-64
+  * translate-x-72
+  * translate-x-80
+  * translate-x-96
+  * -translate-x-0.25
+  * -translate-x-4
+  * -translate-x-8
+  * -translate-x-12
+  * -translate-x-16
+  * -translate-x-20
+  * -translate-x-24
+  * -translate-x-28
+  * -translate-x-32
+  * -translate-x-40
+  * -translate-x-44
+  * -translate-x-48
+  * -translate-x-52
+  * -translate-x-56
+  * -translate-x-60
+  * -translate-x-64
+  * -translate-x-72
+  * -translate-x-80
+  * -translate-x-96
+*/

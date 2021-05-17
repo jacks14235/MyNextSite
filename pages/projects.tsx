@@ -71,3 +71,29 @@ export default function Projects(props: { projectData: ProjectData[] }) {
     </>
   )
 }
+
+/*
+  PurgeCSS:
+  Tailwind purges the dynamic classnames, writing them here makes it keep them
+  * bg-green-400
+  * bg-green-500
+  * bg-green-700
+  * bg-orange-400
+  * bg-orange-500
+  * bg-orange-700
+  * bg-blue-400
+  * bg-blue-500
+  * bg-blue-700
+  * bg-red-400
+  * bg-red-500
+  * bg-red-700
+  * bg-indigo-400
+  * bg-indigo-500
+  * bg-indigo-700
+  * bg-purple-400
+  * bg-purple-500
+  * bg-purple-700
+  * bg-pink-400
+  * bg-pink-500
+  * bg-pink-700
+*/

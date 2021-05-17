@@ -40,3 +40,10 @@ export default function AboutMe(props: { data: AboutMeType[] }) {
     </div>
   )
 }
+
+/*
+  PurgeCSS:
+  Tailwind purges the dynamic classnames, writing them here makes it keep them
+  * flex-row-reverse
+  * flex-col-reverse
+*/

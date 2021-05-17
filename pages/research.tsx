@@ -1,13 +1,16 @@
 import Head from 'next/head'
 import Link from 'next/link'
+import Image from 'next/image'
 import Navbar from '../components/navbar';
 import { useState, useEffect } from 'react'
 
 export async function getStaticProps() {
-  
+  return ({
+    props: {}
+  })
 }
 
-export default function ResearchPage() {
+export default function ResearchPage(props) {
   const [windowWidth, setWindowWidth] = useState<number>(0);
 
   useEffect(() => {
@@ -33,11 +36,17 @@ export default function ResearchPage() {
           This topic combines two great interests of mine, deep learning and music. I've been learning piano for the past 7 years so it was
           fun to combine what I've learned playing piano with AI in a meaningful paper.
         </p>
-        <div className='px-4 sm:px-16 lg:px-32 mb-16'>
+        <div className='px-4 sm:px-16 lg:px-32 mb-10'>
           <h3 className='text-center md:text-left text-lg font-semibold text-left self-start mt-12'>Abstract</h3>
           <p className='text-center md:text-left text-base'>Machine learning algorithms are being applied to a diverse range of applications, maybe one of the most surprising being musical composition. This paper investigates how the encoding of training data affects stylistic components of music, specifically tempo and dynamics. The object of analysis is MuseNet, a recurrent LSTM model capable of mimicking music in a range of genres and composers. Focusing on compositions based on romantic composer Frédéric Chopin, analysis of MuseNet’s compositions were compared to human performances of his works. This investigation finds that the AI-written music lacks diversity in both tempo and dynamic range, ultimately limiting the potential for stylistic and emotional aspects of music.</p>
         </div>
-        <h3 className='text-center text-red-500 xs:text-orange-500 sm:text-green-500 md:text-blue-500 lg:text-indigo-500'>Video Abstract</h3>
+        <a href='/api/cracking-the-encode' target='_blank'>
+          <div className='flex flex-row cursor-pointer px-3 hover:bg-gray-300 transition-color duration-300 mb-8 items-center justify-between h-9 border border-gray-600 rounded-md'>
+            <Image width={23} height={28} src='/images/logos/pdf.svg' />
+            <p className='font-semibold ml-2'>Full paper</p>
+          </div>
+        </a>
+        <h3 className='text-center text-red-500 xs:text-orange-500 sm:text-green-500 md:text-blue-500 lg:text-orange-400 font-semibold text-xl'>Video Abstract</h3>
         <iframe
           style={{ width: Math.min(600, windowWidth * .8) + 'px', height: (9 / 16) * Math.min(600, windowWidth * .8) + 'px' }}
           width="560"

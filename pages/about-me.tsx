@@ -2,10 +2,12 @@ import Link from 'next/link'
 
 
 export async function getStaticProps() {
-  
+  return ({
+    props: {}
+  })
 }
 
-export default function AboutMe() {
+export default function AboutMe(props) {
 
   return (
     <>

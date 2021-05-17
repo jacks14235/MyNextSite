@@ -5,10 +5,12 @@ import Navbar from '../components/navbar'
 import CheckCircle from '@material-ui/icons/CheckCircle'
 
 export async function getStaticProps() {
-  
+  return ({
+    props: {}
+  })
 }
 
-export default function ExperiencePage() {
+export default function ExperiencePage(props) {
   return (
     <>
       <Head>

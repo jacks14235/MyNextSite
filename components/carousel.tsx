@@ -35,7 +35,7 @@ export default function Carousel() {
   useEffect(() => {
     setInterval(() => {
       setIndex((prev) => prev + 1);
-    }, 4000)
+    }, 3000)
   }, [])
 
   const getClass = (n: number) => {

@@ -34,12 +34,13 @@ export default function Projects(props: { projectData: ProjectData[] }) {
         <title>Projects</title>
       </Head>
       <Navbar />
-      <div className='relative mb-36 xs:mb-0 xs:h-screen w-full'>
+      <div className='relative mb-36 xs:mb-0 xs:h-screen w-full md:flex md:flex-col'>
+
         <h1 className='text-6xl text-blue-700 text-center font-bold mb-8 mt-10 sm:mt-0 '>My Projects</h1>
-        <h3 className='text-lg text-blue-500 text-center font-semibold mx-4 lg:mx-32 mb-4 md:mb-8 lg:mb-12'>After more than six years of coding experience, I have countless personal projects in a variety of languages.</h3>
+        <h3 className='text-lg text-blue-500 text-center font-semibold mx-4 lg:mx-32 leading-2'>After more than six years of coding experience, I have countless personal projects in a variety of languages.</h3>
         <Carousel />
         <h3 className='text-2xl text-blue-700 text-center font-semibold mx-4 lg:mx-32 mb-7'>Here are a few of my personal favorites:</h3>
-        <div className='mt-16 md:absolute md:bottom-24 xs:mt-0 w-full grid grid-flow-row xs:grid-cols-2 md:grid-cols-3 gap-4 justify-items-center' >
+        <div className='mt-16 mb-24 xs:mt-0 w-full grid grid-flow-row xs:grid-cols-2 md:grid-cols-3 gap-4 justify-items-center' >
           {props.projectData.map((d, j) => (
             <div className={`relative w-64 h-40 rounded-2xl bg-gradient-to-br from-${d.color}-400 to-${d.color}-700`}>
               <h3 className='text-lg font-semibold m-2 text-center sm:text-left leading-4'>{d.title}</h3>

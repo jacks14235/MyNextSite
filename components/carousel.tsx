@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import Image from 'next/image';
 import { useRadioGroup } from '@material-ui/core';
 
@@ -6,12 +6,23 @@ import { useRadioGroup } from '@material-ui/core';
 export default function Carousel() {
   const [index, setIndex] = useState<number>(1);
   const [windowWidth, setWindowWidth] = useState<number>(0);
+  const [windowHeight, setWindowHeight] = useState<number>(0);
+  const [divHeight, setDivHeight] = useState<number>(0);
+
+  const callbackRef = useCallback((node: HTMLDivElement) => {
+    if (node) {
+      setDivHeight(node.offsetHeight);
+    }
+  }, [windowWidth, windowHeight])
 
   useEffect(() => {
     setWindowWidth(window.innerWidth);
+    setWindowHeight(window.innerHeight);
     window.addEventListener('resize', () => setWindowWidth(window.innerWidth));
+    window.addEventListener('resize', () => setWindowHeight(window.innerHeight));
     return (() => {
       window.removeEventListener('resize', () => setWindowWidth(window.innerWidth));
+      window.removeEventListener('resize', () => setWindowHeight(window.innerHeight));
     });
   }, []);
 
@@ -33,13 +44,13 @@ export default function Carousel() {
   ]
 
   useEffect(() => {
-    setInterval(() => {
-      setIndex((prev) => prev + 1);
-    }, 3000)
+    // setInterval(() => {
+    //   setIndex((prev) => prev + 1);
+    // }, 3000)
   }, [])
 
   const getClass = (n: number) => {
-    const offset = getTailwindSize(windowWidth * .25);
+    const offset = getTailwindSize(Math.min(windowWidth * .25, divHeight * 1.2));
     switch (n) {
       case 0:
         return `scale-150 z-10`;
@@ -55,28 +66,37 @@ export default function Carousel() {
         return `invisible`
     }
   }
-  // ((index % length) + i) % length
+
+  const size = getTailwindSize(Math.min((divHeight/1.5), (windowWidth * .17)))
 
   return (
-    <div className='w-full relative h-12 xs:h-24 sm:h-28 md:h-32 lg:h-48 xl:h-72'>
-      {images.map((src, i) => (
-        <div className={`absolute bg-white w-8 h-8 xs:w-16 xs:h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-32 lg:h-32 xl:w-48 xl:h-48 rounded-full transform left-0 right-0 m-auto ${getClass(((index % images.length) + i) % images.length)} transition-all duration-2000`}>
-          <Image
-            src={'/images/logos/' + src}
-            className={`rounded-full`}
-            layout='fill'
-          />
-        </div>)
-      )}
-      {/* <button className='w-8 h-8 bg-blue-500' onClick={() => setIndex(index - 1)}>{'<'}</button>
-      <button className='w-8 h-8 bg-blue-500' onClick={() => setIndex(index + 1)}>{'>'}</button> */}
-    </div>
+      <div ref={callbackRef} className={`w-full relative h-40 md:h-auto md:flex-grow`}>
+        {images.map((src, i) => (
+          <div className={`absolute bg-white w-${size} h-${size} w-10 rounded-full transform left-0 right-0 top-0 bottom-0 m-auto ${getClass(((index % images.length) + i) % images.length)} transition-all duration-2000`}>
+            <Image
+              src={'/images/logos/' + src}
+              className='rounded-full'
+              layout='fill'
+            />
+          </div>)
+        )}
+      </div>
   )
 }
 
 function getTailwindSize(n: number) {
-  const values = [1, 16, 32, 48, 64, 80, 96, 112, 128, 144, 160, 176, 192, 208, 224, 240, 256, 256, 288, 288, 320, 320, 320, 320, 384];
-  return (values[(Math.floor(n/16))] / 4 || 96).toString();
+  const values = [0, 2, 4, 6, 8, 10, 12, 14, 16, 32, 48, 64, 80, 96, 112, 128, 144, 160, 176, 192, 208, 224, 240, 256, 256, 288, 288, 320, 320, 320, 320, 384];
+  let val = 0;
+
+  for (let v of values) {
+    if (v > n) {
+      break;
+    } else {
+      val = v;
+    }
+  }
+
+  return (val / 4).toString();
 }
 
 /*

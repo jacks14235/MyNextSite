@@ -34,7 +34,6 @@ export default function Carousel() {
     'java.png',
     'Mysql.png',
     'next-js.svg',
-    'nodejs.png',
     'php.png',
     'python.png',
     'react.png',

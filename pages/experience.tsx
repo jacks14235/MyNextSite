@@ -14,7 +14,8 @@ export default function ExperiencePage(props) {
   return (
     <>
       <Head>
-        <title>Experience</title>
+        <title>Jack Stanley - Experience</title>
+        <meta>See Jack Stanley's experience through his education as well as internships and startups.</meta>
       </Head>
       <Navbar />
       <h1 className='text-6xl font-bold text-orange-500 text-center pb-12 mt-10 sm:mt-0'>Experience</h1>

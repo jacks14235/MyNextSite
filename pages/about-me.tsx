@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Head from 'next/head'
 import Image from 'next/image'
 import AboutMeData, { AboutMeType } from '../page-data/aboutme-data';
 import Navbar from '../components/navbar';
@@ -13,6 +14,11 @@ export async function getStaticProps() {
 export default function AboutMe(props: { data: AboutMeType[] }) {
 
   return (
+    <>
+    <Head>
+      <title>Jack Stanley - About Me</title>
+      <meta>Jack Stanley's hobbies and interests, his service through the Boy Scouts of America, and ways to contact him</meta>
+    </Head>
     <div className='flex flex-col items-center'>
       <Navbar />
       <h1 className='text-orange-500 font-bold text-3xl md:text-6xl mb-5 md:mb-16 mt-10 sm:mt-0'>About Me</h1>
@@ -38,6 +44,7 @@ export default function AboutMe(props: { data: AboutMeType[] }) {
 
       <Link href='/'><a><p className='text-blue-700 text-center pt-12 pb-32'><u>Back to Home</u></p></a></Link>
     </div>
+    </>
   )
 }
 

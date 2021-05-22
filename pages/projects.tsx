@@ -32,7 +32,7 @@ export default function Projects(props: { projectData: ProjectData[] }) {
     <>
       <Head>
         <title>Jack Stanley - Projects</title>
-        <meta>A list of some of Jack Stanley's personal coding projects including shared stopwatch, mandelbrot viewer, and distance measurement app among others.</meta>
+        <meta name='description' content="A list of some of Jack Stanley's personal coding projects including shared stopwatch, mandelbrot viewer, and distance measurement app among others" />
       </Head>
       <Navbar />
       <div className='relative mb-36 xs:mb-0 xs:h-screen w-full md:flex md:flex-col'>

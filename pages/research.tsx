@@ -26,7 +26,7 @@ export default function ResearchPage(props) {
     <>
       <Head>
         <title>Jack Stanley - Research</title>
-        <meta>Jack Stanley's essay regarding encoding in machine learning training data, mainly a critique of MuseNet</meta>
+        <meta name='description' content="Jack Stanley's essay regarding encoding in machine learning training data, mainly a critique of MuseNet" />
       </Head>
       <Navbar />
       <div className='w-full flex flex-col items-center mt-10 sm:mt-0'>

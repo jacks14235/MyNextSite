@@ -18,7 +18,7 @@ export default function Home(props: { cardData: CardProps[] }) {
     <>
       <Head>
         <title>Home - Jack Stanley - Princeton University Computer Science</title>
-        <meta>Jack Stanley is a Computer Science student at Princeton University '24. This website documents his projects and experience.</meta>
+        <meta name='description' content="Jack Stanley is a Computer Science student at Princeton University class of '24. This website documents his projects and experience in software engineering" />
       </Head>
       <Navbar />
       <h1 className='text-center text-orange-500 text-4xl font-bold mt-6 mb-2'>Welcome!</h1>

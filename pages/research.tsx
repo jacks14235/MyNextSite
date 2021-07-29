@@ -3,6 +3,8 @@ import Link from 'next/link'
 import Image from 'next/image'
 import Navbar from '../components/navbar';
 import { useState, useEffect } from 'react'
+import { GridThing } from '../components/graphics';
+import { useCallback } from 'react';
 
 export async function getStaticProps() {
   return ({
@@ -48,16 +50,19 @@ export default function ResearchPage(props) {
           </div>
         </a>
         <h3 className='text-center text-red-500 xs:text-orange-500 sm:text-green-500 md:text-blue-500 lg:text-orange-400 font-semibold text-xl'>Video Abstract</h3>
-        <iframe
-          style={{ width: Math.min(600, windowWidth * .8) + 'px', height: (9 / 16) * Math.min(600, windowWidth * .8) + 'px' }}
-          width="560"
-          height="315"
-          src="https://www.youtube.com/embed/Br3SwyfNeV8"
-          title="Video Abstract"
-          frameBorder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-        />
+        <div className='flex flex' style={{ width: Math.min(700, windowWidth) + 'px', height: (9 / 16) * Math.min(700, windowWidth) + 'px' }}>
+          <GridThing className='absolute' width={Math.min(700, windowWidth)} height={Math.min(700, (9 / 16) * Math.min(700, windowWidth))} n={15} color='#FF000033' />
+          <iframe
+            style={{ width: Math.min(600, windowWidth * .8) + 'px', height: (9 / 16) * Math.min(600, windowWidth * .8) + 'px', zIndex: 10, marginTop: ((9 / 16) * Math.min(700, windowWidth) - (9 / 16) * Math.min(600, windowWidth * .8))/2 }}
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/Br3SwyfNeV8"
+            title="Video Abstract"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          />
+        </div>
       </div>
       {/* Tailwind purges the dynamic classnames, writing them in this div makes it keep them */}
       <div className='hidden bg-green-400 bg-green-500 bg-green-700 bg-orange-400 bg-orange-500 bg-orange-700 bg-blue-400 bg-blue-500 bg-blue-700 bg-red-400 bg-red-500 bg-red-700 bg-indigo-400 bg-indigo-500 bg-indigo-700 bg-purple-400 bg-purple-500 bg-purple-700 bg-pink-400 bg-pink-500 bg-pink-700 flex-row-reverse flex-col-reverse translate-x-0.25 translate-x-4 translate-x-8 translate-x-12 translate-x-16 translate-x-20 translate-x-24 translate-x-28 translate-x-32 translate-x-40 translate-x-44 translate-x-48 translate-x-52 translate-x-56 translate-x-60 translate-x-64 translate-x-72 translate-x-80 translate-x-96 -translate-x-0.25 -translate-x-4 -translate-x-8 -translate-x-12 -translate-x-16 -translate-x-20 -translate-x-24 -translate-x-28 -translate-x-32 -translate-x-40 -translate-x-44 -translate-x-48 -translate-x-52 -translate-x-56 -translate-x-60 -translate-x-64 -translate-x-72 -translate-x-80 -translate-x-96' />

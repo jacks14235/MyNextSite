@@ -28,6 +28,7 @@ export default function Carousel() {
 
   const images = [
     'android-studio.png',
+    'tensorflow.png',
     'aws.png',
     'cpp.png',
     'cuda.png',
@@ -39,7 +40,8 @@ export default function Carousel() {
     'react.png',
     'typescript.png',
     'mongodb.png',
-    'heroku.png'
+    'heroku.png',
+    
   ]
 
   useEffect(() => {

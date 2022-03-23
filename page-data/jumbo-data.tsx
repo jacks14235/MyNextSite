@@ -28,7 +28,7 @@ export const getProjectData: () => ProjectData[] = () => [
     description: 'This project was the culmination of years of frustration at losing to my brothers at our annual beach wordsearch battle. After being very surprised that this didn\'t already exist, I set out to create a website where you can simply upload a (well cropped) image of a wordsearch and instantly have the solution drawn for you. Since many OCR libraries such as Google Tesseract weren\'t reliable on the single letters in a wordsearch, I was forced to train an image classifier using tensorflow to identify letters myself after the image is processed and each letter is separated from the original image.',
     color: 'purple',
     image: '/images/wordsearch.png',
-    link: 'https://main.d2hhtc6kxosvqa.amplifyapp.com/',
+    link: 'https://wordsearch-solver.onrender.com/',
     tools: ['react.png', 'tensorflow.png', 'aws.png']
   },
 

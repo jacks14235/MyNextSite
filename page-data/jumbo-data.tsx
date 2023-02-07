@@ -17,7 +17,7 @@ export const getProjectData: () => ProjectData[] = () => [
     description: 'This react app allows multiple users to see and interact with the same stopwatch. Intended for cross country races, it can allow coaches or spectators see live lap updates from people at other sections of the course. The web app was written with React and the backend utilizes AWS and a NodeJS server connected to a MongoDB database.',
     color: 'orange',
     image: '/images/stopwatch.png',
-    link: 'stopwatch.stanley5.com',
+    link: 'https://stopwatch.stanley5.com',
     linkText: 'Stopwatch',
     tools: ['react.png', 'aws.png', 'nodejs.png']
   },

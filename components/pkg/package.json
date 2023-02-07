@@ -1,0 +1,12 @@
+{
+  "name": "wgpu_tutorial",
+  "version": "0.1.0",
+  "files": [
+    "wgpu_tutorial_bg.wasm",
+    "wgpu_tutorial.js",
+    "wgpu_tutorial.d.ts"
+  ],
+  "module": "wgpu_tutorial.js",
+  "types": "wgpu_tutorial.d.ts",
+  "sideEffects": false
+}

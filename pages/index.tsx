@@ -1,9 +1,11 @@
 import Head from 'next/head'
-import Link from 'next/link'
-import styles from '../styles/Home.module.css'
 import Navbar from '../components/navbar';
 import Card, { CardProps } from '../components/card'
 import { getCardData } from '../page-data/card-data';
+// import init from '../public/pkg/wgpu_tutorial.js';
+import init from '../components/pkg/wgpu_tutorial.js';
+import { useEffect } from 'react';
+
 
 export async function getStaticProps() {
   const cardData = getCardData();
@@ -14,6 +16,12 @@ export async function getStaticProps() {
 
 export default function Home(props: { cardData: CardProps[] }) {
 
+  useEffect(() => {
+    init().then(() => {
+      document.getElementById('canvas-container').querySelector('canvas').setAttribute('style', "width:100%;height:100%;");
+    })
+  }, []);
+
   return (
     <>
       <Head>
@@ -22,12 +30,13 @@ export default function Home(props: { cardData: CardProps[] }) {
       </Head>
       <Navbar />
       <h1 className='text-center text-orange-500 text-4xl font-bold mt-6 mb-2'>Welcome!</h1>
-      <h2 className='text-center text-gray-700 text-xl font-semibold mb-4'>See what I have to offer</h2>
+      <h2 className='text-center text-gray-500 text-xl font-semibold mb-4'>See what I have to offer</h2>
       <div className='grid grid-flow-row grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 px-8' style={{ height: 'fit-content' }}>
         {props.cardData.map((d: CardProps) => (
           <Card {...d} />
         ))}
       </div>
+      <div className='w-screen h-screen fixed bg-black top-0 left-0' style={{zIndex: -1}} id='canvas-container'></div>
     </>
   )
 }

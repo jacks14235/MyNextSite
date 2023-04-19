@@ -37,6 +37,7 @@ export default function Home(props: { cardData: CardProps[] }) {
         ))}
       </div>
       <div className='w-screen h-screen fixed bg-black top-0 left-0' style={{zIndex: -1}} id='canvas-container'></div>
+      <a href='web'>About this WebGPU background</a>
     </>
   )
 }

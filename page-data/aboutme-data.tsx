@@ -7,7 +7,7 @@ export interface AboutMeType {
 export const AboutMeData: () => AboutMeType[] = () => ([
   {
     'title': "What I Like to Do",
-    'text': 'Aside from working on coding projects, I am a varsity Cross Country and Track and Field athlete at Princeton University. I spend much of my freetime training and hanging with my teammates. When I\'m not running, you cna find me doing a wide range of outdoor activities including hiking, backpacking, climbing, and cliff jumping. I love adventures and spending time with friends.',
+    'text': 'Aside from working on coding projects, I am a varsity Cross Country and Track and Field athlete at Princeton University. I spend much of my freetime training and hanging with my teammates. When I\'m not running, you can find me doing a wide range of outdoor activities including hiking, backpacking, climbing, and cliff jumping. I love adventures and spending time with friends.',
     'image': '/images/running.png'
   },
 

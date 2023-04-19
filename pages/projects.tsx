@@ -36,8 +36,9 @@ export default function Projects(props: { projectData: ProjectData[] }) {
       </Head>
       <Navbar />
       <div className='relative mb-36 xs:mb-0 xs:h-screen w-full md:flex md:flex-col'>
-
-        <h1 className='text-6xl text-blue-700 text-center font-bold mb-8 mt-10 sm:mt-0 '>My Projects</h1>
+        <div className="w-full bg-blue-600 flex justify-center align-center p-4">
+          <h1 className='text-6xl text-white text-center font-bold sm:mt-0'>My Projects</h1>
+        </div>
         <h3 className='text-lg text-blue-500 text-center font-semibold mx-4 lg:mx-32 leading-2'>After more than six years of coding experience, I have countless personal projects in a variety of languages.</h3>
         <Carousel />
         <h3 className='text-2xl text-blue-700 text-center font-semibold mx-4 lg:mx-32 mb-7'>Here are a few of my personal favorites:</h3>

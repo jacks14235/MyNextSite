@@ -18,9 +18,28 @@ export default function ExperiencePage(props) {
         <meta name='description' content="See Jack Stanley's experience through his education as well as internships and startups" />
       </Head>
       <Navbar />
-      <h1 className='text-6xl font-bold text-orange-500 text-center pb-12 mt-10 sm:mt-0'>Experience</h1>
+      <div className="w-full bg-orange-500 mb-12 flex justify-center align-center p-4">
+          <h1 className='text-6xl font-bold text-white text-center'>Experience</h1>
+      </div>
+
+      <div className='flex flex-col items-center sm:items-start sm:flex-row items-center justify-between w-full mb-24'>
+        <div className='self-start w-full md:w-1/2'>
+          <a href='https://1440.io' target="about:blank"><h1 className='ml-4 text-orange-500 text-6xl font-bold'>1440.io</h1></a>
+          <h2 className='ml-4 mt-4 text-2xl text-orange-600 font-semibold'>Software Company in Park City, UT</h2>
+          <ul className='py-4 text-orange-600 ml-4'>
+            <li>- Worked with a team of fellow Princeton runners and software engineers</li>
+            <li>- Created Google Chrome extension for Goodwill that finds common prices for items based on images</li>
+            <li>- Helped with the design of the frontend React app in TypeScript</li>
+            <li>- Wrote a large portion of the backend servers using PHP and MySQL running in a Docker container</li>
+          </ul>
+        </div>
+        <div className='relative right-0 h-48 w-full md:w-64 md:h-64 md:mr-24'>
+          <Image src='/images/1440io.png' className='rounded-2xl' layout='fill' objectFit='contain' />
+        </div>
+      </div>
+
       <div className='flex flex-col md:flex-row items-center h-auto md:h-80 w-full bg-orange-500'>
-        <div className='relative transform -translate-y-6 w-64 h-32 md:translate-y-0 md:w-64 md:h-96 md:ml-16' style={{minHeight: '10rem'}}>
+        <div className='relative transform -translate-y-6 w-64 h-32 md:translate-y-0 md:w-64 md:h-96 md:ml-16' style={{ minHeight: '10rem' }}>
           <Image src='/images/sports-iq.png' className='rounded-2xl' layout='fill' objectFit='cover' />
         </div>
         <div className='mx-4 md:ml-8 md:mt-8 h-full flex flex-col text-white mb-3'>

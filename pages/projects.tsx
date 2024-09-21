@@ -50,7 +50,7 @@ export default function Projects(props: { projectData: ProjectData[] }) {
               <div className='absolute w-full bottom-2 flex flex-row justify-between items-center px-4'>
                 {new Array(3).fill(0).map((_, i) =>
                   d.tools[i] ?
-                    <Image className='rounded-full' src={`/images/logos/${d.tools[i]}`} width='40' height='40' /> :
+                    <Image className='rounded-full' src={`/images/logos/${d.tools[i]}`} width='40' height='40' onLoadingComplete={() => console.log("loaded")} /> :
                     <div className='w-10' />
                 )}
                 <div onClick={() => toRef(j)} className='rounded-full cursor-pointer bg-white opacity-60 hover:opacity-100 h-10 w-10 flex flex-row items-center justify-center transition-opacity duration-300'>

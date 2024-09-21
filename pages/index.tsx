@@ -3,8 +3,8 @@ import Navbar from '../components/navbar';
 import Card, { CardProps } from '../components/card'
 import { getCardData } from '../page-data/card-data';
 // import init from '../public/pkg/wgpu_tutorial.js';
-import init from '../components/pkg/wgpu_tutorial.js';
-import { useEffect } from 'react';
+import init, { State } from '../components/pkg/wgpu_tutorial.js';
+import { useEffect, useState } from 'react';
 
 
 export async function getStaticProps() {
@@ -15,11 +15,12 @@ export async function getStaticProps() {
 }
 
 export default function Home(props: { cardData: CardProps[] }) {
+  // const [state, setState] = useState<State | null>(null);
 
   useEffect(() => {
     init().then(() => {
       document.getElementById('canvas-container').querySelector('canvas').setAttribute('style', "width:100%;height:100%;");
-    })
+    });
   }, []);
 
   return (

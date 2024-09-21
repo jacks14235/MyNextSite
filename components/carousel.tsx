@@ -8,6 +8,7 @@ export default function Carousel() {
   const [windowWidth, setWindowWidth] = useState<number>(0);
   const [windowHeight, setWindowHeight] = useState<number>(0);
   const [divHeight, setDivHeight] = useState<number>(0);
+  const [imagesLoaded, setImagesLoaded] = useState<number>(0);
 
   const callbackRef = useCallback((node: HTMLDivElement) => {
     if (node) {
@@ -71,7 +72,7 @@ export default function Carousel() {
   const size = getTailwindSize(Math.min((divHeight/1.5), (windowWidth * .17)))
 
   return (
-      <div ref={callbackRef} className={`w-full relative h-40 md:h-auto md:flex-grow`}>
+      <div ref={callbackRef} className={`w-full relative h-40 md:h-auto md:flex-grow`} >
         {images.map((src, i) => (
           <div className={`absolute bg-white w-${size} h-${size} w-10 rounded-full transform left-0 right-0 top-0 bottom-0 m-auto ${getClass(((index % images.length) + i) % images.length)} transition-all duration-2000`}>
             <Image

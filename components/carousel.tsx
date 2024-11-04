@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useCallback } from 'react';
-import Image from "next/legacy/image";
+import Image from "next/image";
 import { useRadioGroup } from '@material-ui/core';
 
 
@@ -72,18 +72,14 @@ export default function Carousel() {
   const size = getTailwindSize(Math.min((divHeight/1.5), (windowWidth * .17)))
 
   return (
-      <div ref={callbackRef} className={`w-full relative h-40 md:h-auto md:flex-grow`} >
-        {images.map((src, i) => (
-          <div className={`absolute bg-white w-${size} h-${size} w-10 rounded-full transform left-0 right-0 top-0 bottom-0 m-auto ${getClass(((index % images.length) + i) % images.length)} transition-all duration-2000`}>
-            <Image
-              src={'/images/logos/' + src}
-              className='rounded-full'
-              layout='fill'
-            />
-          </div>)
-        )}
-      </div>
-  )
+    (<div ref={callbackRef} className={`w-full relative h-40 md:h-auto md:flex-grow`} >
+      {images.map((src, i) => (
+        <div className={`absolute bg-white w-${size} h-${size} w-10 rounded-full transform left-0 right-0 top-0 bottom-0 m-auto ${getClass(((index % images.length) + i) % images.length)} transition-all duration-2000`}>
+          <Image src={'/images/logos/' + src} className='rounded-full' fill sizes="100vw" />
+        </div>)
+      )}
+    </div>)
+  );
 }
 
 function getTailwindSize(n: number) {

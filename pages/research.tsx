@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import Link from 'next/link'
-import Image from "next/legacy/image"
+import Image from "next/image"
 import Navbar from '../components/navbar';
 import { useState, useEffect } from 'react'
 import { useScrollY, useWidth } from '../components/utility-hooks';

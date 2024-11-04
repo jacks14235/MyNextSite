@@ -1,6 +1,6 @@
 import { useRef, useState, useCallback } from 'react';
 import Link from "next/link";
-import Image from 'next/image'
+import Image from "next/legacy/image"
 import Head from 'next/head'
 import ProjectJumbo from '../components/project-jumbotron';
 import { getProjectData, ProjectData } from "../page-data/jumbo-data";

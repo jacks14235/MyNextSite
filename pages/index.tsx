@@ -34,7 +34,7 @@ export default function Home(props: { cardData: CardProps[] }) {
       <h2 className='text-center text-gray-500 text-xl font-semibold mb-4'>See what I have to offer</h2>
       <div className='grid grid-flow-row grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 px-8' style={{ height: 'fit-content' }}>
         {props.cardData.map((d: CardProps) => (
-          <Card {...d} />
+          <Card key={d.title} {...d} />
         ))}
       </div>
       <div className='w-screen h-screen fixed bg-black top-0 left-0' style={{zIndex: -1}} id='canvas-container'></div>

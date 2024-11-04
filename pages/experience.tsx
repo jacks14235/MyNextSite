@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Image from 'next/image'
+import Image from "next/legacy/image"
 import Head from 'next/head'
 import Navbar from '../components/navbar'
 import CheckCircle from '@mui/icons-material/CheckCircle';

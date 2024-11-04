@@ -107,7 +107,6 @@ export default function ResearchPage(props) {
             </div>
           </div>
         </div>
-        {/* <Link href='/'><a><p className='text-blue-700 text-center mt-12 mb-32'><u>Back to Home</u></p></a></Link> */}
       </div>
       <div style={{ height: '20000px' }}></div>
       {/* Tailwind purges the dynamic classnames, writing them in this div makes it keep them */}

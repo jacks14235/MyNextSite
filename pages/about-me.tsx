@@ -29,7 +29,7 @@ export default function AboutMe(props: { data: AboutMeType[] }) {
               <p>{d.text}</p>
             </div>
             <div className='relative h-40 mt-8 md:mt-0 md:w-80 md:h-80'>
-              <Image src={d.image} layout='fill' objectFit='contain' className='rounded-full' />
+              <Image alt={d.title} src={d.image} layout='fill' objectFit='contain' className='rounded-full' />
             </div>
           </div>
         ))}
@@ -41,7 +41,7 @@ export default function AboutMe(props: { data: AboutMeType[] }) {
           <p><a className='underline hover:text-blue-700' href='https://www.linkedin.com/in/jack-stanley-3083941ab/' target='_blank'>My LinkedIn Profile</a></p>
         </div>
 
-        <Link href='/'><a><p className='text-blue-700 text-center pt-12 pb-32'><u>Back to Home</u></p></a></Link>
+        <Link href='/'><p className='text-blue-700 text-center pt-12 pb-32'><u>Back to Home</u></p></Link>
       </div>
     </>
   )

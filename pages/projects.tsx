@@ -69,7 +69,7 @@ export default function Projects(props: { projectData: ProjectData[] }) {
             <ProjectJumbo title={d.title} text={d.description} image={d.image} color={d.color} reverse={i % 2 === 1} link={d.link} ref={refs[i]} />
           </>
         )}
-        <Link href='/'><a className='hover:text-blue-700 hover:underline mb-20'>Back to home</a></Link>
+        <Link href='/' className='hover:text-blue-700 hover:underline mb-20'>Back to home</Link>
       </div>
     </>
   )

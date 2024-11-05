@@ -50,7 +50,7 @@ export default function ResearchPage(props) {
           </SlideIn>
           {scrollY < 3000 && <>
               <h6>Scroll for more</h6>
-              <h6 className='rotate-180'>^</h6>
+              <span className='animate-bounce'><h6 className='rotate-180'>^</h6></span>
             </>
           }
         </div>
@@ -63,7 +63,6 @@ export default function ResearchPage(props) {
             <SlideIn className='flex flex-col justify-center items-start' left={0} top={0} scrollY={scrollY} start={3000} end={6000} mode='right' duration={1000}>
               <h3 className='text-left text-white text-3xl font-extrabold w-80'>Using segmentation to refine transient object removal in NeRFs</h3>
               <h3 className='relative z-10 text-left text-white text-xl'>
-                <a className='text-blue-500' href="https://www.youtube.com/embed/Br3SwyfNeV8" target="_blank">Video Abstract</a> | {' '}
                 <a className='text-blue-500' href='/api/iw' target='_blank'>Full Paper</a></h3>
             </SlideIn>
             <div className='absolute top-0 left-0 w-full h-full'>

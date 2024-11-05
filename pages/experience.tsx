@@ -75,7 +75,7 @@ export default function ExperiencePage(props) {
         <a href='https://1440.io' target="about:blank"><h1 className='ml-4 text-orange-500 text-6xl font-bold'>1440.io</h1></a>
         <h2 className='ml-4 mt-4 text-2xl text-orange-600 font-semibold'>Software Company in Park City, UT</h2>
         <ul className='py-4 ml-4 list-disc'>
-          <li>Developed a messaging platform with real-time translation and LLM compatibility, increasing customer service productivity by >50%</li>
+          <li>Developed a messaging platform with real-time translation and LLM compatibility, increasing customer service productivity by {'\u003E'}50%</li>
           <li>Collaborated with a team of interns using Jira to track tasks and participated in weekly client demos</li>
           <li>Created a chrome extension for use in 10+ Goodwill locations, increasing product earnings by 20%</li>
         </ul>

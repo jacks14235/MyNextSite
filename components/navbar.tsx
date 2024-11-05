@@ -46,7 +46,7 @@ export default function Navbar(props: NavbarProps) {
   } else {
     return (
       <>
-        <MenuIcon fontSize='large' className='absolute top-2 right-4 text-black z-20' onClick={() => setMenuOpen(!menuOpen)} />
+        <MenuIcon fontSize='large' className='absolute top-2 right-4 text-white z-20' onClick={() => setMenuOpen(!menuOpen)} />
         <div className={`w-full h-36 transform ${!menuOpen ? '-translate-y-36' : 'shadow-lg'} transition-transform duration-500 flex flex-col items-center justify-center absolute top-0 z-10 text-orange-500 bg-white border-b-2 border-gray-300`}>
           <>
             <Link className={linkClass} href='/'>

@@ -134,3 +134,30 @@ a {
   background-image: linear-gradient(to left, #EC4899, transparent)
 }
 
+.orbiter {
+  transform-origin: right;
+  animation: 8s infinite forwards orbit;
+}
+
+.delayed {
+  animation-delay: -4s;
+}
+
+@keyframes orbit {
+  0% {
+    transform: rotate(0deg);
+  }
+  35% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  85% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+

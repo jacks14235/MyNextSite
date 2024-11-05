@@ -30,14 +30,21 @@ export default function Home(props: { cardData: CardProps[] }) {
         <meta name='description' content="Jack Stanley is a Computer Science student at Princeton University class of '24. This website documents his projects and experience in software engineering" />
       </Head>
       <Navbar />
-      <h1 className='text-center text-orange-500 text-4xl font-bold mt-6 mb-2'>Welcome!</h1>
-      <h2 className='text-center text-gray-500 text-xl font-semibold mb-4'>See what I have to offer</h2>
+      <div className="relative w-80 h-28 absolute left-0 right-0 m-auto mt-10 sm:mt-0">
+        <div className="w-1/2 orbiter absolute left-0 top-0">
+          <img width='90%' src='/name.svg' />
+        </div>
+        <div className="w-1/2 orbiter delayed absolute left-0 top-0">
+          <img width='90%' src='/name.svg' />
+        </div>
+      </div>
+      <h2 className='text-center text-gray-400 text-xl font-semibold mb-4'>Welcome!</h2>
       <div className='grid grid-flow-row grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 px-8' style={{ height: 'fit-content' }}>
         {props.cardData.map((d: CardProps) => (
           <Card key={d.title} {...d} />
         ))}
       </div>
-      <div className='w-screen h-screen fixed bg-black top-0 left-0' style={{zIndex: -1}} id='canvas-container'></div>
+      <div className='w-screen h-screen fixed bg-black top-0 left-0' style={{ zIndex: -1 }} id='canvas-container'></div>
       <a href='web'>About this WebGPU background</a>
     </>
   )

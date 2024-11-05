@@ -1,18 +1,18 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import Image from "next/image";
-import { useRadioGroup } from '@material-ui/core';
-
 
 export default function Carousel() {
   const [index, setIndex] = useState<number>(1);
   const [windowWidth, setWindowWidth] = useState<number>(0);
   const [windowHeight, setWindowHeight] = useState<number>(0);
   const [divHeight, setDivHeight] = useState<number>(0);
+  const [size, setSize] = useState<number>(0);
   const [imagesLoaded, setImagesLoaded] = useState<number>(0);
 
   const callbackRef = useCallback((node: HTMLDivElement) => {
     if (node) {
       setDivHeight(node.offsetHeight);
+      setSize(Math.min(divHeight/1.5, windowWidth * .17))
     }
   }, [windowWidth, windowHeight])
 
@@ -69,13 +69,15 @@ export default function Carousel() {
     }
   }
 
-  const size = getTailwindSize(Math.min((divHeight/1.5), (windowWidth * .17)))
+  // const size = getTailwindSize(Math.min(divHeight/1.5, windowWidth * .17))
+  console.log('size', size)
 
   return (
     (<div ref={callbackRef} className={`w-full relative h-40 md:h-auto md:flex-grow`} >
       {images.map((src, i) => (
-        <div className={`absolute bg-white w-${size} h-${size} w-10 rounded-full transform left-0 right-0 top-0 bottom-0 m-auto ${getClass(((index % images.length) + i) % images.length)} transition-all duration-2000`}>
-          <Image src={'/images/logos/' + src} className='rounded-full' fill sizes="100vw" />
+        // <div className={`absolute bg-white w-${size} h-${size} w-10 rounded-full transform left-0 right-0 top-0 bottom-0 m-auto ${getClass(((index % images.length) + i) % images.length)} transition-all duration-2000`}>
+        <div style={{width: size, height: size}} className={`absolute bg-white rounded-full transform left-0 right-0 top-0 bottom-0 m-auto ${getClass(((index % images.length) + i) % images.length)} transition-all duration-2000`}>
+          <Image src={'/images/logos/' + src} alt={`image_${i}}`} className='rounded-full object-contain' fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"  />
         </div>)
       )}
     </div>)

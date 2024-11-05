@@ -1,9 +1,4 @@
 import Head from 'next/head'
-<<<<<<< HEAD
-import Link from 'next/link'
-import Image from "next/image"
-=======
->>>>>>> origin
 import Navbar from '../components/navbar';
 import { useState, useEffect, useRef } from 'react'
 import { useScrollY, useWidth } from '../components/utility-hooks';

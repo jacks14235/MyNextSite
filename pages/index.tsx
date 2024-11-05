@@ -31,6 +31,7 @@ export default function Home(props: { cardData: CardProps[] }) {
       </Head>
       <Navbar />
       <h1 className='text-center text-orange-500 text-4xl font-bold mt-6 mb-2'>Welcome!</h1>
+      <a href='/api/public'>Test this thing</a>
       <h2 className='text-center text-gray-500 text-xl font-semibold mb-4'>See what I have to offer</h2>
       <div className='grid grid-flow-row grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 px-8' style={{ height: 'fit-content' }}>
         {props.cardData.map((d: CardProps) => (

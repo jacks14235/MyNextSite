@@ -3,6 +3,8 @@ import Head from 'next/head'
 import Image from "next/image"
 import AboutMeData, { AboutMeType } from '../page-data/aboutme-data';
 import Navbar from '../components/navbar';
+import { useRouter } from 'next/router';
+import { useEffect, useRef } from 'react';
 
 export async function getStaticProps() {
   const data = AboutMeData();
@@ -12,6 +14,17 @@ export async function getStaticProps() {
 }
 
 export default function AboutMe(props: { data: AboutMeType[] }) {
+  const router = useRouter();
+  const contactRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (router.asPath.includes('#')) {
+      const elementId = router.asPath.split('#')[1];
+      if (elementId === 'contact' && contactRef.current) {
+        contactRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+  }, [router.asPath, contactRef]);
 
   return (<>
     <Head>
@@ -19,7 +32,7 @@ export default function AboutMe(props: { data: AboutMeType[] }) {
       <meta name='description' content="Jack Stanley's hobbies and interests, his service through the Boy Scouts of America, and ways to contact him" />
     </Head>
     <div className='flex flex-col items-center'>
-      <Navbar />
+      <Navbar black />
       <h1 className='text-orange-500 font-bold text-3xl md:text-6xl mb-5 md:mb-16 mt-10 sm:mt-0'>About Me</h1>
       {props.data.map((d, i) => (
         <div className={`md:h-96 mb-8 md:mb-24 w-4/5 md:bg-gray-200 p-2 md:p-8 rounded-lg flex lg:justify-between flex-col md:flex-row${i % 2 == 1 ? '-reverse' : ''}`}>
@@ -41,10 +54,10 @@ export default function AboutMe(props: { data: AboutMeType[] }) {
         </div>
       ))}
 
-      <div className={`md:h-96 mb-8 md:mb-24 w-4/5 md:bg-gray-200 p-2 md:p-8 rounded-lg flex flex-col text-center`}>
+      <div ref={contactRef} className={`md:h-96 mb-8 md:mb-24 w-4/5 md:bg-gray-200 p-2 md:p-8 rounded-lg flex flex-col text-center`}>
         <h2 className='text-3xl font-semibold mb-4'>Contact Me</h2>
         <p className='font-semibold mb-4'>Feel free to reach out to me with any questions about my work or opportunities you know of!</p>
-        <p className='mb-4'>Email: <a className='underline hover:text-blue-700' href='mailto: jcs9@princeton.edu' target='_blank'>jcs9@princeton.edu</a></p>
+        <p className='mb-4'>Email: <a className='underline hover:text-blue-700' href='mailto: jack.stanley@duke.edu' target='_blank'>jack.stanley@duke.edu</a></p>
         <p><a className='underline hover:text-blue-700' href='https://www.linkedin.com/in/jack-stanley-3083941ab/' target='_blank'>My LinkedIn Profile</a></p>
       </div>
 

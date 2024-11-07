@@ -55,18 +55,19 @@ export default function ResearchPage(props) {
           }
         </div>
         {/* Independent Work */}
-        <div className='absolute flex flex-row items-center justify-center w-full h-full'>
+        <div className='absolute flex flex-col lg:flex-row items-center justify-center w-full h-full'>
           <SlideIn className='flex justify-center items-center h-full' scrollY={scrollY} start={3000} end={9000} mode='left' duration={1000}>
             <h1 className='text-white text-8xl font-extrabold w-60'>SNeRF</h1>
           </SlideIn>
           <div className='relative w-full h-full'>
-            <SlideIn className='flex flex-col justify-center items-start' left={0} top={0} scrollY={scrollY} start={3000} end={6000} mode='right' duration={1000}>
-              <h3 className='text-left text-white text-3xl font-extrabold w-80'>Using segmentation to refine transient object removal in NeRFs</h3>
+            <SlideIn className='flex flex-col justify-center items-center lg:items-start' left={0} top={0} scrollY={scrollY} start={3000} end={6000} mode='right' duration={1000}>
+              <h3 className='text-left text-white text-3xl font-extrabold w-80 text-center lg:text-left'>Using segmentation to refine transient object removal in NeRFs</h3>
               <h3 className='relative z-10 text-left text-white text-xl'>
-                <a className='text-blue-500' href='/api/iw' target='_blank'>Full Paper</a></h3>
+                <a className='text-blue-500' href='/api/iw' target='_blank'>Full Paper</a>
+              </h3>
             </SlideIn>
             <div className='absolute top-0 left-0 w-full h-full'>
-              <SlideIn className='flex flex-col justify-center items-start' left={0} top={0} scrollY={scrollY} start={6000} end={9000} mode='right' duration={1000}>
+              <SlideIn className='flex flex-col justify-center items-center lg:items-start' left={0} top={0} scrollY={scrollY} start={6000} end={9000} mode='right' duration={1000}>
                 <video ref={videoRef} preload='preload'>
                   <source src="/images/bulldozer.mp4" />
                   Video not supported
@@ -76,19 +77,19 @@ export default function ResearchPage(props) {
           </div>
         </div>
         {/* Cracking the encode */}
-        <div className='absolute flex flex-row items-center justify-center w-full h-full'>
+        <div className='absolute flex flex-col lg:flex-row items-center justify-center w-full h-full'>
           <SlideIn className='flex justify-center items-center h-full' scrollY={scrollY} start={9000} end={15000} mode='left' duration={1000}>
             <h1 className='text-white text-8xl font-extrabold w-60'>cracking the <br></br>encode</h1>
           </SlideIn>
           <div className='relative w-full h-full'>
-            <SlideIn className='flex flex-col justify-center items-start' left={0} top={0} scrollY={scrollY} start={9000} end={12000} mode='right' duration={1000}>
-              <h3 className='text-left text-white text-3xl font-extrabold w-80'>The consequences of normalizing training data in AI music composition</h3>
+            <SlideIn className='flex flex-col justify-center items-center lg:items-start' left={0} top={0} scrollY={scrollY} start={9000} end={12000} mode='right' duration={1000}>
+              <h3 className='text-left text-white text-3xl font-extrabold w-80 text-center lg:text-left'>The consequences of normalizing training data in AI music composition</h3>
               <h3 className='text-left text-white text-xl relative z-10'>
                 <a className='text-blue-500' href="https://www.youtube.com/embed/Br3SwyfNeV8" target="_blank">Video Abstract</a> | {' '}
                 <a className='text-blue-500' href='/api/cracking-the-encode' target='_blank'>Full Paper</a></h3>
             </SlideIn>
             <div className='absolute top-0 left-0 w-full h-full'>
-              <SlideIn className='flex flex-col justify-center items-start' left={0} top={0} scrollY={scrollY} start={12000} end={15000} mode='right' duration={1000}>
+              <SlideIn className='flex flex-col justify-center items-center lg:items-start' left={0} top={0} scrollY={scrollY} start={12000} end={15000} mode='right' duration={1000}>
                 <iframe
                   style={{ width: Math.min(600, windowWidth * .8) + 'px', height: (9 / 16) * Math.min(600, windowWidth * .8) + 'px' }}
                   width="560"
